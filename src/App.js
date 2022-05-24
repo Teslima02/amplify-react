@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    Analytics.record("Home page visit")
     Analytics.record({name: "UserSingIn", attributes: {userName: "WDJ"}})
   }, [])
   return (
