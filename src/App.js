@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { Analytics } from 'aws-amplify';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    Analytics.record("Home page visit")
+    Analytics.record({name: "UserSingIn", attributes: {userName: "WDJ"}})
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
